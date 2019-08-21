@@ -59,3 +59,37 @@ const intervalId = setInterval(function() {
 // }, 10000);
 
 // build a simple 10 seconds countdown using DOM manipulations
+
+const heading = document.createElement("h1");
+heading.setAttribute("id", "countdown");
+
+heading.innerText = "10 seconds";
+
+document.body.appendChild(heading);
+
+let countdown = 10;
+
+const id = setInterval(function() {
+  //   heading.innerText = `${countdown} seconds`;
+  heading.innerText = `${countdown} ${heading.innerText.split(" ")[1]}`;
+
+  countdown--;
+
+  if (countdown === -1) {
+    clearInterval(id);
+    // heading.innerText = "Happy new year!!!";
+
+    // element.innerHTML =
+    //   "<img src='https://i.ytimg.com/vi/Br1GDaEyICE/maxresdefault.jpg' />";
+
+    document.body.removeChild(heading);
+
+    const img = document.createElement("img");
+    img.setAttribute(
+      "src",
+      "https://i.ytimg.com/vi/Br1GDaEyICE/maxresdefault.jpg"
+    );
+
+    document.body.appendChild(img);
+  }
+}, 1000);
