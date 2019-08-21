@@ -1,8 +1,10 @@
 // console.log("Hello");
 // console.log("World!");
-/*
+
 function printHello() {
   for (let i = 0; i < 1000; i++) {
+    debugger;
+
     console.log("Hello");
   }
   return "Hello printed 1000 times";
@@ -14,9 +16,11 @@ function printWorld() {
   return "World! printed 1000 times";
 }
 
-console.time("printHello");
+// console.time("printHello");
 // printHello();
-console.timeEnd("printHello");
+// console.timeEnd("printHello");
+
+// debugger;
 
 function cb() {
   console.log("time has elapsed");
@@ -33,14 +37,13 @@ setTimeout(function() {
 }, 3000);
 
 // for (let i = 0; i < 10; i++) {
-printWorld();
+// printWorld();
 // }
 
 [1, 2, 3].forEach(function(number) {
   console.log(number);
+  //   debugger;
 });
-
-*/
 
 let count = 0;
 
@@ -50,7 +53,7 @@ const intervalId = setInterval(function() {
   if (count >= 10) {
     clearInterval(intervalId);
   }
-  console.log(new Date().toLocaleString());
+  //   console.log(new Date().toLocaleString());
 }, 2000);
 
 // setTimeout(function() {
@@ -93,3 +96,21 @@ const id = setInterval(function() {
     document.body.appendChild(img);
   }
 }, 1000);
+
+const name = "John";
+// console.log(nme);
+// console.log(name);
+// Uncaught ReferenceError: nme is not defined
+
+// function foo() {
+//     console.log("bar");
+// Uncaught SyntaxError: Unexpected end of input
+
+// try catch will execute the code in the catch block only if there is an error in the try block (except syntax errors)
+
+try {
+  console.log(nme);
+} catch (error) {
+  //   console.log(error);
+  console.log(name);
+}
